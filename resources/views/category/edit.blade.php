@@ -19,7 +19,7 @@
         <div class="alert alert-success">{{session('status')}}</div>
         @endif
 
-        <form name="frmCreate" method="post" action="{{url('categories/'.$category->id.'/edit')}}" class="form">
+        <form name="frmCreate" method="post" action="{{url('categories/'.$category->id.'/edit')}}" enctype="multipart/form-data" class="form">
             @csrf
             @method('PUT')
             <table class="table">
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>Ảnh đại diện</td>
-                    <td><input type="text" name="image" id="image" class="form-control" /></td>
+                    <td><input type="file" class="form-control" required name="image"></td>
                 </tr>
                 <tr>
                     <td>Is Active </td>
@@ -49,13 +49,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button name="btnSave" class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
+                        <button name="btnSave" class="btn btn-primary"><i class="fas fa-save"></i> Xem</button>
                     </td>
                 </tr>
             </table>
             <div class= "card-header">
                     
-                        <a href="{{ url('categories')}}" class = "btn btn-primary float-end">Back</a>
+                        <a href="{{ url('/')}}" class = "btn btn-primary float-end">Back</a>
                     
 
                 </div>

@@ -5,11 +5,14 @@
 
 
 @section('breadcrumb')
-    @include('partial.breadcrumb')
+    @include('partial.slider')
+    @include('partial.introduction')
+    @include('partial.product')
+    @include('partial.review')
+    @include('partial.blog')
 @stop
 
 @section('content')
-
             @yield('breadcrumb')
             <!-- this is content -->
 

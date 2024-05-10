@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop bán hàng NetaShop</title>
+    <title>Shop bán hàng</title>
 
     <!-- Liên kết CSS Bootstrap bằng CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -19,7 +19,7 @@
         <div class="alert alert-success">{{session('status')}}</div>
         @endif
 
-        <form name="frmCreate" method="post" action="{{url('categories/create')}}" class="form">
+        <form name="frmCreate" method="post" action="{{url('categories/create')}}" enctype="multipart/form-data" class="form">
             @csrf
             <table class="table">
                <tr>
@@ -38,7 +38,10 @@
                 </tr>
                 <tr>
                     <td>Ảnh đại diện</td>
-                    <td><input type="text" name="image" id="image" class="form-control" /></td>
+                    <td> 
+                        <input type="file" class="form-control" required name="image">
+                    </td>
+                   
                 </tr>
                 <tr>
                     <td>Is Active </td>
@@ -54,9 +57,16 @@
             </table>
             <div class= "card-header">
                     
-                        <a href="{{ url('categories')}}" class = "btn btn-primary float-end">Back</a>
+                        <a href="{{ url('/')}}" class = "btn btn-primary float-end">Xem</a>
                     
 
                 </div>
         </form>
     </div>
+
+                    
+                 
+
+                
+
+</div>

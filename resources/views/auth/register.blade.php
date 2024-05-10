@@ -49,18 +49,24 @@
                                     <label class="font-semibold" for="name">Your Name:</label>
                                     <input id="RegisterName" name ="name" type="text" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="Harry">
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                    
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="font-semibold" for="email">Email Address:</label>
-                                    <input id="LoginEmail" name ="email" type="email" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="name@example.com">
+                                    <input id="email" name ="email" type="email" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="name@example.com">
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="font-semibold" for="password">Password:</label>
-                                    <input id="LoginPassword" name = "password" type="password" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="Password:">
+                                    <input id="password" name = "password" type="password" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="Password:">
                                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="font-semibold" for="password_confirmation">Password Confirmation:</label>
+                                    <input id="password_confirmation" name = "password_confirmation" type="password" class="form-input mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0" placeholder="Password:">
+                                    <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                 </div>
 
                                 <div class="mb-4">

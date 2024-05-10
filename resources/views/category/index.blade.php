@@ -39,7 +39,10 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->description}}</td>
-                                <td>{{$item->photo}}</td>
+                                <td>
+                                    <img src="{{ asset($item->image) }}" style="height:100px;width:150px;" alt="Img">
+                                    
+                                </td>
                                 <td>{{$item->is_active}}</td>
                                 <td>
                                     <a href="{{ url('categories/'.$item->id.'/edit') }}">Edit</a>
