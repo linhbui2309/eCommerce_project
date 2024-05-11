@@ -14,8 +14,7 @@
 
 @section('content')
             @yield('breadcrumb')
-            <!-- this is content -->
-
+     
 @stop
 
 

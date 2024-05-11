@@ -1,29 +1,29 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+@extends('layouts.admin')
+@section('title','Profile')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
+            @section('content')
+                        <div class="grid grid-cols-1">
+                            <div class="profile-banner relative text-transparent rounded-md shadow dark:shadow-gray-700 overflow-hidden">
+                                <input id="pro-banner" name="profile-banner" type="file" class="hidden" onchange="loadFile(event)">
+                                <div class="relative shrink-0">
+                                    <img src="assets/images/blog/bg.jpg" class="h-80 w-full object-cover" id="profile-banner" alt="">
+                                    <div class="absolute inset-0 bg-black/70"></div>
+                                    <label class="absolute inset-0 cursor-pointer" for="pro-banner"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-12 grid-cols-1">
+                            <div class="xl:col-span-3 lg:col-span-4 md:col-span-4 mx-6">
+                                    @include('profile.partial.profile-banner')
+                            </div>
+                            <div class="xl:col-span-9 lg:col-span-8 md:col-span-8 mt-6">
+                                <div class="grid grid-cols-1 gap-6">
+                                    @include('profile.partial.update-personal-details')
+                                    @include('profile.partial.update-password')
+                                    @include('profile.partial.delete-account')
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+                                </div>
+                            </div>
+                        </div>
+          @stop              
+                           

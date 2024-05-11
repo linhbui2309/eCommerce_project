@@ -2,19 +2,20 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-Route::get('/',[App\Http\Controllers\CategoryController::class,'show']);
-Route::get('categories',[App\Http\Controllers\CategoryController::class,'index']);
-Route::get('categories/create',[App\Http\Controllers\CategoryController::class,'create']);
-Route::post('categories/create',[App\Http\Controllers\CategoryController::class,'store']);
-Route::get('categories/{id}/edit',[App\Http\Controllers\CategoryController::class,'edit']);
-Route::put('categories/{id}/edit',[App\Http\Controllers\CategoryController::class,'update']);
-Route::get('categories/{id}/delete',[App\Http\Controllers\CategoryController::class,'destroy']);
-Route::resource('categories', \App\Http\Controllers\CategoryController::class); 
+Route::get('/',[App\Http\Controllers\BlogController::class,'show']);
+Route::get('blogs',[App\Http\Controllers\BlogController::class,'index']);
+Route::get('blogs/create',[App\Http\Controllers\BlogController::class,'create']);
+Route::post('blogs/create',[App\Http\Controllers\BlogController::class,'store']);
+Route::get('blogs/{id}/edit',[App\Http\Controllers\BlogController::class,'edit']);
+Route::put('blogs/{id}/edit',[App\Http\Controllers\BlogController::class,'update']);
+Route::get('blogs/{id}/delete',[App\Http\Controllers\BlogController::class,'destroy']);
+Route::resource('blogs', \App\Http\Controllers\BlogController::class); 
+
 
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('pages.admin-page.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
