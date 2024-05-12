@@ -10,12 +10,15 @@ Route::get('blogs/{id}/edit',[App\Http\Controllers\BlogController::class,'edit']
 Route::put('blogs/{id}/edit',[App\Http\Controllers\BlogController::class,'update']);
 Route::get('blogs/{id}/delete',[App\Http\Controllers\BlogController::class,'destroy']);
 Route::resource('blogs', \App\Http\Controllers\BlogController::class); 
+Route::get('blogs-details', function () {
+    return view('frontend.blog.blog-details');
+});
 
 
 
 
 Route::get('/dashboard', function () {
-    return view('pages.admin-page.dashboard');
+    return view('frontend.pages.admin-page.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 

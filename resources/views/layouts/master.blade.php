@@ -24,11 +24,11 @@
     
 </head>
 <body>
-    @include('partial.header')
+    @include('frontend.partial.header')
     @yield('content')
 
     
-    @include('partial.footer')
+    @include('frontend.partial.footer')
 
    
 

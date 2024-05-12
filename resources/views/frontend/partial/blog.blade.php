@@ -13,6 +13,7 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-8 gap-[30px]">
                 @foreach ($blogs as $item)
+                @if ($item['is_active']!==0)
                     <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
                         <img src="{{ asset($item->image) }}" style="height:100px;width:150px;" alt="Img">
 
@@ -25,7 +26,7 @@
                             </div>
                         </div>
                     </div>
-
+                @endif
                     @endforeach 
                 </div><!--end grid-->
             </div><!--end container-->

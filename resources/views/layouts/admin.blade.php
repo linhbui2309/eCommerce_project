@@ -27,10 +27,10 @@
     <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
 
     <div class="page-wrapper toggled">
-    @include('admin.navigation')
+    @include('frontend.pages.admin-page.navigation')
      <!-- Start Page Content -->
     <main class="page-content bg-gray-50 dark:bg-slate-800">
-    @include('admin.header')
+    @include('frontend.pages.admin-page.header')
         <div class="container-fluid relative px-3">
                     <div class="layout-specing">
                     
@@ -41,7 +41,7 @@
                     
                     </div>
         </div>
-        @include('admin.footer')
+        @include('frontend.pages.admin-page.footer')
     </main>
     
 

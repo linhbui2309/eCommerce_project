@@ -9,18 +9,18 @@ class BlogController extends Controller
 {
     public function index(){
         $blogs = Blog::all();
-        return view('blog.index', compact('blogs'));
+        return view('backend.blog.index', compact('blogs'));
     }
 
     public function show(){
         $blogs = Blog::all();
-        return view('pages.top-page.index', compact('blogs'));
+        return view('frontend.index', compact('blogs'));
     }
 
     
     public function create(){
         
-        return view('blog.create');
+        return view('backend.blog.index');
     }
     public function store(Request $request){
         $request->validate([
@@ -44,12 +44,12 @@ class BlogController extends Controller
             'image' => $path.$filename,
             'is_active' => $request->is_active == true ? 1:0,
         ]);
-        return redirect('blogs/create')->with('status','Blog created');
+        return redirect('blogs')->with('status','Blog created');
     }
 
     public function edit(int $id){
-        $category = Blog::find($id);
-        return view('blog.edit', compact('blog'));
+        $blog = Blog::find($id);
+        return view('backend.blog.edit', compact('blog'));
     }
     
     public function update(Request $request, int $id){

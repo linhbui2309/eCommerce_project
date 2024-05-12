@@ -52,8 +52,8 @@
                             <a href="javascript:void(0)"><i class="uil uil-blogger me-2"></i>Blog</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="blog.html">Blogs</a></li>
-                                    <li><a href="{{ route('blogs.index') }}">Blog Detail</a></li>
+                                    <li><a href="{{ route('blogs.index') }}">Blogs</a></li>
+                                    <li><a href="{{url('blogs-details')}}">Blog Detail</a></li>
                                 </ul>
                             </div>
                         </li>
