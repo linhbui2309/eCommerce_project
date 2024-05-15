@@ -35,17 +35,13 @@
                     <div class="layout-specing">
                     
                     @yield('content')
-                        
-                      
-                        
-                    
                     </div>
-        </div>
         @include('frontend.pages.admin-page.footer')
     </main>
-    
+</div>                    
+                      
+                        
 
-    </div>
             <!-- Switcher -->
             <div class="fixed top-[30%] -end-3 z-50">
             <span class="relative inline-block rotate-90">

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Profile;
+
 
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
@@ -11,51 +13,81 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+    public function index(){
+        $profiles = Profile::all();
+        return view('frontend.profile.main-profile',compact('profiles'));
     }
+    
+    public function create(){
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->all($request->validated());
+    }
+    public function store(Request $request){
+        $request->validate([
+            'first_name' => 'required|max:255|string',
+            'last_name' => 'required|max:255|string',
+            'description' => 'required|string',
+            'occupation' => 'required|string',
+            'avatar' => 'nullable|mimes:png,jpg,jpeg,webp',
+        ]);
+        
+        if($request->file('image')){
+            $file=$request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $path = 'public/Image/';
+            $file->move($path,$filename);
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
         }
-     
 
-        $request->user()->save();
+        Profile::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'description' => $request->description,
+            'occupation' => $request->occupation,
+            'avatar' => $path.$filename,
+        ]);
+        return redirect('profile')->with('status','Profile created');
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+    public function edit(int $id){
+        $profile = Profile::find($id);
+        return view('frontend.profile.edit', compact('profile'));
+    }
+    public function update(Request $request, int $id){
+        $request->validate([
+            'first_name' => 'required|max:255|string',
+            'last_name' => 'required|max:255|string',
+            'description' => 'required|string',
+            'occupation' => 'required|string',
+            'avatar' => 'nullable|mimes:png,jpg,jpeg,webp',
+            
         ]);
 
-        $user = $request->user();
+        if($request->file('image')){
+            $file=$request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $path = 'public/Image/';
+            $file->move($path,$filename);
 
-        Auth::logout();
+        }
 
-        $user->delete();
+        Profile::find($id)->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'description' => $request->description,
+            'occupation' => $request->occupation,
+            'avatar' => $path.$filename,
+            
+        ]);
+        return redirect()->back()->with('status','Profile updated');
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
     }
+    public function destroy(){
+
+    }
+    
+
 }

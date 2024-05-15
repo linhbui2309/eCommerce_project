@@ -37,13 +37,14 @@
                         <li class="sidebar-dropdown">
                             <a href="javascript:void(0)"><i class="uil uil-user me-2"></i>User Profile</a>
                             <div class="sidebar-submenu">
+                                
                                 <ul>
-                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="{{route('profile.index')}}">Profile</a></li>
                                     <li><a href="profile-billing.html">Billing Info</a></li>
                                     <li><a href="profile-payment.html">Payment</a></li>
                                     <li><a href="profile-social.html">Social Profile</a></li>
                                     <li><a href="profile-notification.html">Notifications</a></li>
-                                    <li><a href="{{ route('profile.edit') }}">Profile Settings</a></li>
+                                    <li><a href="">Profile Settings</a></li>
                                 </ul>
                             </div>
                         </li>

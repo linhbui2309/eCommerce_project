@@ -19,7 +19,7 @@
                                     <div class="border-t border-gray-100 dark:border-gray-700">
                                         <ul class="list-none sidebar-nav mb-0 mt-3" id="navmenu-nav">
                                             <li class="navbar-item account-menu">
-                                                <a href="profile.html" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <a href="{{route('profile.index')}}" class="navbar-link text-slate-400 flex items-center py-2 rounded">
                                                     <span class="me-2 text-[18px] mb-0"><i class="uil uil-dashboard"></i></span>
                                                     <h6 class="mb-0 font-semibold">Profile</h6>
                                                 </a>
@@ -54,7 +54,7 @@
                                             </li>
 
                                             <li class="navbar-item account-menu">
-                                                <a href="profile-setting.html" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <a href="{{url('profile/'.$profile->id.'/edit')}}" class="navbar-link text-slate-400 flex items-center py-2 rounded">
                                                     <span class="me-2 text-[18px] mb-0"><i class="uil uil-setting"></i></span>
                                                     <h6 class="mb-0 font-semibold">Settings</h6>
                                                 </a>
