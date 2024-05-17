@@ -44,7 +44,7 @@
                                     <li><a href="profile-payment.html">Payment</a></li>
                                     <li><a href="profile-social.html">Social Profile</a></li>
                                     <li><a href="profile-notification.html">Notifications</a></li>
-                                    <li><a href="">Profile Settings</a></li>
+                                    <li><a href="{{url('profile/'.Auth::user()->id.'/edit')}}">Profile Settings</a></li>
                                 </ul>
                             </div>
                         </li>

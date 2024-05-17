@@ -54,7 +54,7 @@
                                             </li>
 
                                             <li class="navbar-item account-menu">
-                                                <a href="{{url('profile/'.$profile->id.'/edit')}}" class="navbar-link text-slate-400 flex items-center py-2 rounded">
+                                                <a href="{{url('profile/'.Auth::user()->id.'/edit')}}" class="navbar-link text-slate-400 flex items-center py-2 rounded">
                                                     <span class="me-2 text-[18px] mb-0"><i class="uil uil-setting"></i></span>
                                                     <h6 class="mb-0 font-semibold">Settings</h6>
                                                 </a>

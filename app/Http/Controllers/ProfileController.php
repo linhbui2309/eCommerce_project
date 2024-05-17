@@ -18,6 +18,7 @@ class ProfileController extends Controller
         return view('frontend.profile.main-profile',compact('profiles'));
     }
     
+    
     public function create(){
 
     }
@@ -51,7 +52,8 @@ class ProfileController extends Controller
 
     }
     public function edit(int $id){
-        $profile = Profile::find($id);
+       $profile = Profile::find($id);
+        
         return view('frontend.profile.edit', compact('profile'));
     }
     public function update(Request $request, int $id){
@@ -64,8 +66,8 @@ class ProfileController extends Controller
             
         ]);
 
-        if($request->file('image')){
-            $file=$request->file('image');
+        if($request->file('avatar')){
+            $file=$request->file('avatar');
             $extention = $file->getClientOriginalExtension();
             $filename= time().'.'.$extention;
             $path = 'public/Image/';

@@ -4,6 +4,7 @@
 
 
 
+
             
                         <div class="grid grid-cols-1">
                             <div class="profile-banner relative text-transparent rounded-md shadow dark:shadow-gray-700 overflow-hidden">
@@ -33,6 +34,12 @@
                         
                         </div>
                         </div>
+
+
+                        
+
+
+ 
  
           @stop              
                            

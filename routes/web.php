@@ -24,19 +24,21 @@ Route::get('/dashboard', function () {
 
 //profile
 
-Route::get('profile',[App\Http\Controllers\ProfileController::class,'index']);
-Route::get('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'edit']);
-Route::post('profile/create',[App\Http\Controllers\ProfileController::class,'store']);
+// Route::get('profile',[App\Http\Controllers\ProfileController::class,'index']);
+// Route::get('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'edit']);
 
-Route::put('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'update']);
-Route::get('profile/{id}/delete',[App\Http\Controllers\ProfileController::class,'destroy']);
-Route::resource('profile', \App\Http\Controllers\ProfileController::class); 
+// Route::post('profile/create',[App\Http\Controllers\ProfileController::class,'store']);
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-//     Route::post('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('user.destroy');
-// });
+// Route::put('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'update']);
+// Route::get('profile/{id}/delete',[App\Http\Controllers\ProfileController::class,'destroy']);
+// Route::resource('profile', \App\Http\Controllers\ProfileController::class); 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'index'])->name('profile.index');
+    Route::get('/profile/{id}/edit', [UserController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/{id}/edit',[UserController::class,'update'])->name('profile.update');
+    Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy');
+});
 
 
 

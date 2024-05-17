@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="grid md:grid-cols-12 grid-cols-1">
-                        @foreach($profiles as $profile)
+                        
                             @include('frontend.profile.partial.profile-banner')
                             
                             <div class="xl:col-span-9 lg:col-span-8 md:col-span-8 mt-6">
@@ -31,7 +31,7 @@
                                     <div class="p-6 relative rounded-md shadow dark:shadow-gray-700 bg-white dark:bg-slate-900">
                                         <h5 class="text-xl font-semibold">{{ Auth::user()->name }}</h5>
                             
-                                        <p class="text-slate-400 mt-3">{{$profile->description}}</p>
+                                        <p class="text-slate-400 mt-3">{{Auth::user()->description}}</p>
                                     </div>
                                     
 
@@ -50,14 +50,14 @@
                                                     <i data-feather="bookmark" class="fea icon-ex-md text-slate-400 me-3"></i>
                                                     <div class="flex-1">
                                                         <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Skills :</h6>
-                                                        <a href="" class="text-slate-400">{{$profile->skill}}</a>
+                                                        <a href="" class="text-slate-400">{{Auth::user()->skill}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center mt-3">
                                                     <i data-feather="italic" class="fea icon-ex-md text-slate-400 me-3"></i>
                                                     <div class="flex-1">
                                                         <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Language :</h6>
-                                                        <a href="" class="text-slate-400">{{$profile->language}}</a>
+                                                        <a href="" class="text-slate-400">{{Auth::user()->language}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center mt-3">
@@ -71,21 +71,21 @@
                                                     <i data-feather="gift" class="fea icon-ex-md text-slate-400 me-3"></i>
                                                     <div class="flex-1">
                                                         <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Birthday :</h6>
-                                                        <p class="text-slate-400 mb-0">{{$profile->birthday}}</p>
+                                                        <p class="text-slate-400 mb-0">{{Auth::user()->birthday}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center mt-3">
                                                     <i data-feather="map-pin" class="fea icon-ex-md text-slate-400 me-3"></i>
                                                     <div class="flex-1">
                                                         <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Location :</h6>
-                                                        <a href="" class="text-slate-400">{{$profile->address}}</a>
+                                                        <a href="" class="text-slate-400">{{Auth::user()->address}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center mt-3">
                                                     <i data-feather="phone" class="fea icon-ex-md text-slate-400 me-3"></i>
                                                     <div class="flex-1">
                                                         <h6 class="text-indigo-600 dark:text-white font-medium mb-0">Cell No :</h6>
-                                                        <a href="" class="text-slate-400">{{$profile->phone_numbers}}</a>
+                                                        <a href="" class="text-slate-400">{{Auth::user()->phone_numbers}}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
                                 </div>
                                 
                             </div>
-                         @endforeach   
+                            
                         </div>
                         <!-- End Content -->
                        

@@ -15,11 +15,28 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('name');
+            $table->string('last_name',255)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('description');
+            $table->string('address',255)->nullable();
+            $table->string('address2',255)->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('language')->nullable();
+            $table->string('skill')->nullable();
+            $table->string('avatar')->nullable();
+            $table->bigInteger('avatar_id')->nullable();
+            $table->integer('phone_numbers');
+            $table->string('occupation');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
+
+         
+            
+            
+         
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

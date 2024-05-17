@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class UserController extends Controller
 {
+
+    public function index(){
+        
+        return view('frontend.profile.main-profile');
+    }
+    
+
     /**
      * Display the user's profile form.
      */
@@ -24,18 +32,28 @@ class UserController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(ProfileUpdateRequest $request, int $id)
     {
-        $request->user()->all($request->validated());
+        $users = User::find($id);
+        $users->name = $request->input('name');
+        $users->last_name = $request->input('last_name');
+        $users->email = $request->input('email');
+        $users->description = $request->input('description');
+        $users->occupation = $request->input('occupation');
+        $users->update();
+        return redirect()->back()->with('status','Profile updated');
+        // $request->user()->all($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-     
+        // if ($request->user()->isDirty('email')) {
+        //     $request->user()->email_verified_at = null;
+        // }
 
-        $request->user()->save();
+      
 
-        return Redirect::route('user.edit')->with('status', 'user-updated');
+
+       
+
+        // return Redirect::route('frontend.profile.edit')->with('status', 'user-updated');
     }
 
     /**
