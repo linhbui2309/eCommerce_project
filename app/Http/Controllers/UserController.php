@@ -29,12 +29,52 @@ class UserController extends Controller
         ]);
     }
 
+    public function store(Request $request){
+        $request->validate([
+            'avatar' => 'nullable|mimes:png,jpg,jpeg,webp',
+            
+        ]);
+        if($request->file('avatar')){
+            $file=$request->file('avatar');
+            $extention = $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $path = 'public/Image/';
+            $file->move($path,$filename);
+
+        }
+
+        User::create([
+            'image' => $path.$filename,
+            
+        ]);
+        return redirect()->back()->with('status','Avatar updated');
+    }
+
+
+
     /**
      * Update the user's profile information.
      */
     public function update(ProfileUpdateRequest $request, int $id)
     {
         $users = User::find($id);
+        $request->validate([
+            'avatar' => 'nullable|mimes:png,jpg,jpeg,webp',
+            
+        ]);
+        if($request->file('avatar')){
+            $file=$request->file('avatar');
+            $extention = $file->getClientOriginalExtension();
+            $filename= time().'.'.$extention;
+            $path = 'public/Image/';
+            $file->move($path,$filename);
+
+        }
+
+        User::find($id)->update([
+            'avatar' => $path.$filename,
+            
+        ]);
         $users->name = $request->input('name');
         $users->last_name = $request->input('last_name');
         $users->email = $request->input('email');

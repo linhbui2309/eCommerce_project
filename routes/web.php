@@ -35,6 +35,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('profile.index');
+    Route::post('/profile/create',[UserController::class,'store'])->name('profile.create');
     Route::get('/profile/{id}/edit', [UserController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile/{id}/edit',[UserController::class,'update'])->name('profile.update');
     Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy');
@@ -44,13 +45,13 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/user', [UserController::class, 'edit'])->name('user.edit');
-    Route::patch('/user', [UserController::class, 'update'])->name('user.update');
-    Route::delete('/user', [UserController::class, 'destroy'])->name('user.destroy');
+// Route::middleware('auth')->group(function () {
+//     Route::get('/user', [UserController::class, 'edit'])->name('user.edit');
+//     Route::patch('/user', [UserController::class, 'update'])->name('user.update');
+//     Route::delete('/user', [UserController::class, 'destroy'])->name('user.destroy');
     
 
-});
+// });
 
 
 

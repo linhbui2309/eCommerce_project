@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('user.destroy') }}">
+<form method="post" action="{{ route('profile.destroy') }}">
 @csrf
 @method('delete')
 <h2 class="text-lg font-medium text-gray-900">

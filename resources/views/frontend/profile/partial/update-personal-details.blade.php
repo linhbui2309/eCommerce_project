@@ -8,8 +8,19 @@
                                         <form method="post" action="{{ url('profile/'.$user->id.'/edit') }}" enctype="multipart/form-data" class="form">
                                         @csrf
                                         @method('patch')
+                                        <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+                                        <div>
+                                                <p class="font-semibold mb-4">Upload your blog image here, Please click "Upload Image" Button.</p>
+                                                <div class="preview-box flex justify-center rounded-md shadow dark:shadow-gray-800 overflow-hidden bg-gray-50 dark:bg-slate-800 text-slate-400 p-2 text-center small w-auto max-h-60">Supports JPG, PNG and MP4 videos. Max file size : 10MB.</div>
+                                                <input type="file" id="input-file" name="avatar" accept="image/*" onchange={handleChange()} hidden>
+                                                <label class="btn-upload py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-6 cursor-pointer" for="input-file">Upload Image</label>
+                                            </div>
+                                        </div>
+                                        
+
                                         
                                             <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+                                            
                                                 <div>
                                                     <label class="form-label font-medium">First Name : <span class="text-red-600">*</span></label>
                                                     <div class="form-icon relative mt-2">

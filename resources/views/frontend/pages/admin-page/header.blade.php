@@ -206,7 +206,7 @@
                             <!-- User/Profile Dropdown -->
                             <li class="dropdown inline-block relative">
                                 <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
-                                    <span class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-full"><img src="assets/images/client/05.jpg" class="rounded-full" alt=""></span>
+                                    <span class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-full"><img src="{{ asset(Auth::user()->avatar) }}" class="rounded-full" alt=""></span>
                                     <span class="font-semibold text-[16px] ms-1 sm:inline-block hidden">{{ Auth::user()->name }}</span>
                                 </button>
                                 <!-- Dropdown menu -->
