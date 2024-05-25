@@ -37,50 +37,23 @@
                 </div><!--end grid-->
 
                 <div class="grid md:grid-cols-3 grid-cols-1 mt-8 gap-[30px]">
+                @foreach ($stores as $store)
                     <div class="group text-center">
                         <i data-feather="pie-chart" class="h-10 w-10 stroke-1 group-hover:stroke-[1.5px] group-hover:text-indigo-600 duration-500 mx-auto"></i>
 
                         <div class="mt-6">
-                            <a href="" class="text-xl font-semibold group-hover:text-indigo-600 duration-500">Profitable Marketing</a>
+                            <a href="" class="text-xl font-semibold group-hover:text-indigo-600 duration-500">{{$store->name}}</a>
 
-                            <p class="text-slate-400 mt-4">We develop digital strategies, products and services appreciated by clients.</p>
+                            <p class="text-slate-400 mt-4">{{$store->address}}</p>
 
                             <div class="mt-4">
-                                <a href="" class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">Read More <i class="uil uil-arrow-right align-middle"></i></a>
+                                <a href="{{url('store/'.$store->id.'/register')}}" class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">Register <i class="uil uil-arrow-right align-middle"></i></a>
                             </div>
                         </div>
                     </div>
                     <!-- Feature End -->
                     
-                    <div class="group text-center">
-                        <i data-feather="briefcase" class="h-10 w-10 stroke-1 group-hover:stroke-[1.5px] group-hover:text-indigo-600 duration-500 mx-auto"></i>
-
-                        <div class="mt-6">
-                            <a href="" class="text-xl font-semibold group-hover:text-indigo-600 duration-500">SEO Specialists</a>
-
-                            <p class="text-slate-400 mt-4">We develop digital strategies, products and services appreciated by clients.</p>
-
-                            <div class="mt-4">
-                                <a href="" class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">Read More <i class="uil uil-arrow-right align-middle"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Feature End -->
-                    
-                    <div class="group text-center">
-                        <i data-feather="target" class="h-10 w-10 stroke-1 group-hover:stroke-[1.5px] group-hover:text-indigo-600 duration-500 mx-auto"></i>
-
-                        <div class="mt-6">
-                            <a href="" class="text-xl font-semibold group-hover:text-indigo-600 duration-500">Audience Analysis</a>
-
-                            <p class="text-slate-400 mt-4">We develop digital strategies, products and services appreciated by clients.</p>
-
-                            <div class="mt-4">
-                                <a href="" class="relative inline-block font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">Read More <i class="uil uil-arrow-right align-middle"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Feature End -->
+                    @endforeach
                 </div>
             </div><!--end container-->
         </section><!--end section-->

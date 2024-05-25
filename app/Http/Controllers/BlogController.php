@@ -12,10 +12,7 @@ class BlogController extends Controller
         return view('backend.blog.index', compact('blogs'));
     }
 
-    public function show(){
-        $blogs = Blog::all();
-        return view('frontend.index', compact('blogs'));
-    }
+    
 
     
     public function create(){

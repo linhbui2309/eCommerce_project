@@ -7,7 +7,7 @@
         
                     <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
                         <li class="">
-                            <a href="index.html"><i class="uil uil-chart-line me-2"></i>Dashboard</a>
+                            <a href="{{route('dashboard')}}"><i class="uil uil-chart-line me-2"></i>Dashboard</a>
                         </li>
 
                         <li class="sidebar-dropdown">
@@ -135,10 +135,10 @@
                         </li>
 
                         <li class="sidebar-dropdown">
-                            <a href="javascript:void(0)"><i class="uil uil-layers me-2"></i>Miscellaneous</a>
+                            <a href="javascript:void(0)"><i class="uil uil-layers me-2"></i>Registration</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="comingsoon.html">Comingsoon</a></li>
+                                    <li><a href="{{route('registration.index')}}">Pending</a></li>
                                     <li><a href="maintenance.html">Maintenance</a></li>
                                     <li><a href="error.html">Error</a></li>
                                     <li><a href="thankyou.html">Thank You</a></li>

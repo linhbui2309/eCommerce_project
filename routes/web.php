@@ -1,9 +1,18 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
-Route::get('/',[App\Http\Controllers\BlogController::class,'show']);
+use App\Http\Controllers\RegistrationController;
+
+
+
+
+
+Route::get('/',[App\Http\Controllers\HomeController::class,'index']);
 Route::get('blogs',[App\Http\Controllers\BlogController::class,'index']);
 Route::get('blogs/create',[App\Http\Controllers\BlogController::class,'create']);
 Route::post('blogs/create',[App\Http\Controllers\BlogController::class,'store']);
@@ -15,30 +24,52 @@ Route::get('blogs-details', function () {
     return view('frontend.blog.blog-details');
 });
 
+//USER
+Route::middleware(['auth','userMiddleware'])->group(function () {
+    Route::get('store/{id}/register',[App\Http\Controllers\HomeController::class,'storeRegister']);
+    //dashboard
+    Route::get('dashboard',[UserController::class,'show'])->name('dashboard');
+    //registartion
+    Route::post('/regisration',[RegistrationController::class,'store'])->name('registration.store');
+});
 
 
 
-Route::get('/dashboard', function () {
-    return view('frontend.pages.admin-page.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-//profile
 
-// Route::get('profile',[App\Http\Controllers\ProfileController::class,'index']);
-// Route::get('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'edit']);
 
-// Route::post('profile/create',[App\Http\Controllers\ProfileController::class,'store']);
 
-// Route::put('profile/{id}/edit',[App\Http\Controllers\ProfileController::class,'update']);
-// Route::get('profile/{id}/delete',[App\Http\Controllers\ProfileController::class,'destroy']);
-// Route::resource('profile', \App\Http\Controllers\ProfileController::class); 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [UserController::class, 'index'])->name('profile.index');
-    Route::post('/profile/create',[UserController::class,'store'])->name('profile.create');
-    Route::get('/profile/{id}/edit', [UserController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile/{id}/edit',[UserController::class,'update'])->name('profile.update');
-    Route::delete('/profile', [UserController::class, 'destroy'])->name('profile.destroy');
+//ADMIN
+Route::middleware(['auth','adminMiddleware'])->group(function () {
+
+    //dashboard
+    Route::get('/admin/dashboard',[AdminController::class,'show'])->name('admin.dashboard');
+
+    //profile
+    Route::get('/profile', [AdminController::class, 'index'])->name('profile.index');
+    Route::post('/profile/create',[AdminController::class,'store'])->name('profile.create');
+    Route::get('/profile/{id}/edit', [AdminController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/{id}/edit',[AdminController::class,'update'])->name('profile.update');
+    Route::delete('/profile', [AdminController::class, 'destroy'])->name('profile.destroy');
+
+    //registration
+    Route::get('/registration', [RegistrationController::class, 'index'])->name('registration.index');
+   
+    Route::get('/admin/approve/{userId}', [AdminController::class, 'approveRegistration'])->name('admin.approve');
+    Route::get('/admin/reject/{userId}', [AdminController::class, 'rejectRegistration'])->name('admin.reject');
+    
+
+    //permissions
+    Route::resource('permissions', \App\Http\Controllers\PermissionController::class);
+    Route::get('permissions/{permissionId}/delete', [App\Http\Controllers\PermissionController::class,'destroy']);
+
+    //roles
+    Route::resource('roles', \App\Http\Controllers\RoleController::class);
+    Route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class,'destroy']);
+    Route::get('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class,'addPermissionToRole']);
+    Route::put('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class,'givePermissionToRole']);
+
 });
 
 
