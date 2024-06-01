@@ -22,6 +22,7 @@
         <link href="{{ asset('assets1/libs/@iconscout/unicons/css/line.css')}}" type="text/css" rel="stylesheet">
         <link href="{{ asset('assets1/libs/@mdi/font/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('assets1/css/tailwind.css')}}">
+        @yield('style-libraries')
 
     </head>
     <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
@@ -30,12 +31,13 @@
     @include('frontend.pages.admin-page.navigation')
      <!-- Start Page Content -->
     <main class="page-content bg-gray-50 dark:bg-slate-800">
-    @include('frontend.pages.admin-page.header')
+        @include('frontend.pages.admin-page.header')
         <div class="container-fluid relative px-3">
                     <div class="layout-specing">
                     
                     @yield('content')
                     </div>
+        </div>
         @include('frontend.pages.admin-page.footer')
     </main>
 </div>                    
@@ -73,6 +75,15 @@
         <script src="{{ asset('assets1/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{ asset('assets1/js/plugins.init.js')}}"></script>
         <script src="{{ asset('assets1/js/app.js')}}"></script>
+        
+        <script src="{{ asset('assets1/libs/fullcalendar/locales-all.min.js')}}"></script>
+        <script src="{{ asset('assets1/js/fullcalendar.init.js')}}"></script>
+
+        
+
+        
         <!-- JAVASCRIPTS -->
+        
+        @yield('script')
     </body>
 </html>

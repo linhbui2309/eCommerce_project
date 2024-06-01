@@ -7,12 +7,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\FullCalendarController;
 
 
 
 
 
 Route::get('/',[App\Http\Controllers\HomeController::class,'index']);
+
 Route::get('blogs',[App\Http\Controllers\BlogController::class,'index']);
 Route::get('blogs/create',[App\Http\Controllers\BlogController::class,'create']);
 Route::post('blogs/create',[App\Http\Controllers\BlogController::class,'store']);
@@ -69,6 +71,15 @@ Route::middleware(['auth','adminMiddleware'])->group(function () {
     Route::get('roles/{roleId}/delete', [App\Http\Controllers\RoleController::class,'destroy']);
     Route::get('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class,'addPermissionToRole']);
     Route::put('roles/{roleId}/give-permissions', [App\Http\Controllers\RoleController::class,'givePermissionToRole']);
+
+    //callender
+    
+    //fullcalender
+Route::get('fullcalendar',[FullCalendarController::class,'index'])->name('fullcalendar.index');
+Route::post('fullcalendar/create',[FullCalendarController::class],'store');
+Route::post('fullcalendar/update',[FullCalendarController::class],'update');
+Route::post('fullcalendar/delete',[FullCalendarController::class],'destroy');
+
 
 });
 

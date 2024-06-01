@@ -14,11 +14,11 @@
                             <a href="javascript:void(0)"><i class="uil uil-browser me-2"></i>Layouts</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="index-dark.html">Dark Dashboard</a></li>
-                                    <li><a href="index-rtl.html">RTL Dashboard</a></li>
-                                    <li><a href="index-dark-rtl.html">Dark RTL Dashboard</a></li>
-                                    <li><a href="index-sidebar-light.html">Light Sidebar</a></li>
-                                    <li><a href="index-sidebar-colored.html">Colored Sidebar</a></li>
+                                    <li><a href="">Dark Dashboard</a></li>
+                                    <li><a href="">RTL Dashboard</a></li>
+                                    <li><a href="">Dark RTL Dashboard</a></li>
+                                    <li><a href="">Light Sidebar</a></li>
+                                    <li><a href="">Colored Sidebar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -27,9 +27,9 @@
                             <a href="javascript:void(0)"><i class="uil uil-apps me-2"></i>Apps</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="chat.html">Chat</a></li>
-                                    <li><a href="email.html">Email</a></li>
-                                    <li><a href="calendar.html">Calendar</a></li>
+                                    <li><a href="{{url('/chatify')}}">Chat</a></li>
+                                    <li><a href="">Email</a></li>
+                                    <li><a href="{{route('fullcalendar.index')}}">Calendar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -40,10 +40,10 @@
                                 
                                 <ul>
                                     <li><a href="{{route('profile.index')}}">Profile</a></li>
-                                    <li><a href="profile-billing.html">Billing Info</a></li>
-                                    <li><a href="profile-payment.html">Payment</a></li>
-                                    <li><a href="profile-social.html">Social Profile</a></li>
-                                    <li><a href="profile-notification.html">Notifications</a></li>
+                                    <li><a href="">Billing Info</a></li>
+                                    <li><a href="">Payment</a></li>
+                                    <li><a href="">Social Profile</a></li>
+                                    <li><a href="">Notifications</a></li>
                                     <li><a href="{{url('profile/'.Auth::user()->id.'/edit')}}">Profile Settings</a></li>
                                 </ul>
                             </div>
@@ -63,10 +63,10 @@
                             <a href="javascript:void(0)"><i class="uil uil-shopping-cart me-2"></i>E-Commerce</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-item-detail.html">Shop Detail</a></li>
-                                    <li><a href="shop-cart.html">Shopcart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="">Shop</a></li>
+                                    <li><a href="">Shop Detail</a></li>
+                                    <li><a href="">Shopcart</a></li>
+                                    <li><a href="">Checkout</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -75,8 +75,8 @@
                             <a href="javascript:void(0)"><i class="uil uil-camera me-2"></i>Gallery</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="gallery-one.html">Gallary One</a></li>
-                                    <li><a href="gallery-two.html">Gallery Two</a></li>
+                                    <li><a href="">Gallary One</a></li>
+                                    <li><a href="">Gallery Two</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -85,12 +85,12 @@
                             <a href="javascript:void(0)"><i class="uil uil-file me-2"></i>Pages</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="starter.html">Starter</a></li>
-                                    <li><a href="faqs.html">FAQs</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="privacy.html">Privacy Policy</a></li>
-                                    <li><a href="terms.html">Term & Condition</a></li>
+                                    <li><a href="">Starter</a></li>
+                                    <li><a href="">FAQs</a></li>
+                                    <li><a href="">Pricing</a></li>
+                                    <li><a href="">Team</a></li>
+                                    <li><a href="">Privacy Policy</a></li>
+                                    <li><a href="">Term & Condition</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -103,10 +103,10 @@
                             <a href="javascript:void(0)"><i class="uil uil-envelope me-2"></i>Email Template</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="email-confirmation.html">Confirmation</a></li>
-                                    <li><a href="email-password-reset.html">Reset Password</a></li>
-                                    <li><a href="email-alert.html">Alert</a></li>
-                                    <li><a href="email-invoices.html">Invoice</a></li>
+                                    <li><a href="">Confirmation</a></li>
+                                    <li><a href="">Reset Password</a></li>
+                                    <li><a href="">Alert</a></li>
+                                    <li><a href="">Invoice</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -115,8 +115,8 @@
                             <a href="javascript:void(0)"><i class="uil uil-invoice me-2"></i>Invoice</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="invoice-list.html">Invoice List</a></li>
-                                    <li><a href="invoice.html">Invoice Preview</a></li>
+                                    <li><a href="">Invoice List</a></li>
+                                    <li><a href="">Invoice Preview</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -125,11 +125,11 @@
                             <a href="javascript:void(0)"><i class="uil uil-sign-in-alt me-2"></i>Authentication</a>
                             <div class="sidebar-submenu">
                                 <ul>
-                                    <li><a href="auth-login.html">Login</a></li>
-                                    <li><a href="auth-signup.html">Signup</a></li>
-                                    <li><a href="auth-signup-success.html">Signup Success</a></li>
-                                    <li><a href="auth-re-password.html">Reset Password</a></li>
-                                    <li><a href="auth-lock-screen.html">Lockscreen</a></li>
+                                    <li><a href="">Login</a></li>
+                                    <li><a href="">Signup</a></li>
+                                    <li><a href="">Signup Success</a></li>
+                                    <li><a href="">Reset Password</a></li>
+                                    <li><a href="">Lockscreen</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -139,9 +139,9 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li><a href="{{route('registration.index')}}">Pending</a></li>
-                                    <li><a href="maintenance.html">Maintenance</a></li>
-                                    <li><a href="error.html">Error</a></li>
-                                    <li><a href="thankyou.html">Thank You</a></li>
+                                    <li><a href="">Maintenance</a></li>
+                                    <li><a href="">Error</a></li>
+                                    <li><a href="">Thank You</a></li>
                                 </ul>
                             </div>
                         </li>
