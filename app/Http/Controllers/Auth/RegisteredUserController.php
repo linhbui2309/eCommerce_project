@@ -42,8 +42,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'last_name' => $request->last_name ?? 'default_lastname',
             'role_id' => $request->role_id ?? 3,
-            'description' => 'default description',
-            'phone_numbers' => $request->phone_numbers,
+            'description' => $request->description ?? 'default description',
+            'phone_numbers' => $request->phone_numbers ?? 123,
             'occupation' => $request->occupation ?? 'default_occupation',
             'avatar' => $request->avatar ?? 'default_avatar'
         ]);

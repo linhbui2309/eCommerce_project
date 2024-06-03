@@ -58,7 +58,10 @@
                             <div class="container">
                                 <div class="response"></div>
                                 <div id='calendar'></div>  
+                                <button type ="button" id="saveBtn" class="btn btn-primary">Save</button>
+
                             </div>
+                            
  
                             </div>
                         </div>
@@ -104,7 +107,7 @@
             selectHelper: true,
             select: function (start, end, allDay) {
                 var title = prompt('Event Title:');
-
+                
                 if (title) {
                     var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                     var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");

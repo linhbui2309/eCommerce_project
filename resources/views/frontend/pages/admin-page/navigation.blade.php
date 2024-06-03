@@ -67,6 +67,9 @@
                                     <li><a href="">Shop Detail</a></li>
                                     <li><a href="">Shopcart</a></li>
                                     <li><a href="">Checkout</a></li>
+                                @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 2)
+                                    <li><a href="">Product Settings</a></li>
+                                @endif
                                 </ul>
                             </div>
                         </li>

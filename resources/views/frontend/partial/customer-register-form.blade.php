@@ -21,7 +21,7 @@
                     Register for {{Auth::user()->email}}
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('registration.store') }}">
+                    <form method="POST" action="{{ url('store/'.$store->id.'/register') }}">
                         @csrf
                         
                         @error('email')
@@ -35,8 +35,8 @@
 
                         <label for="role">Choose a role:</label>
                         <select id="role" name="role">
-                            <option value="admin">Admin</option>
-                            <option value="manager">Manager</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Manager</option>
                         </select>
 
                      

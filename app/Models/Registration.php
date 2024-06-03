@@ -12,6 +12,8 @@ class Registration extends Model
     protected $fillable = [
         'name',
         'email',
+        'store_id',
+        'pending_role',
         'status'
         ];
 

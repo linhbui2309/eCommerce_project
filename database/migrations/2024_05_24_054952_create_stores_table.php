@@ -15,6 +15,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
                 $table->id();
                 $table->string('name');
+                $table->unsignedBigInteger('role_id')->default(3);
                 $table->string('address');
                 $table->string('city');
                 $table->string('state');

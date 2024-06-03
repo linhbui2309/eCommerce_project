@@ -8,10 +8,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\FullCalendarController;
-
-
-
-
+use App\Http\Controllers\HomeController;
 
 Route::get('/',[App\Http\Controllers\HomeController::class,'index']);
 
@@ -32,7 +29,7 @@ Route::middleware(['auth','userMiddleware'])->group(function () {
     //dashboard
     Route::get('dashboard',[UserController::class,'show'])->name('dashboard');
     //registartion
-    Route::post('/regisration',[RegistrationController::class,'store'])->name('registration.store');
+    Route::post('/store/{store_id}/register',[HomeController::class,'processRegistration'])->name('registration.store');
 });
 
 
